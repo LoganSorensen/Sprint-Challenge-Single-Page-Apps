@@ -3,15 +3,16 @@ import Header from "./components/Header.js";
 import CharacterList from "./components/CharacterList";
 import WelcomePage from "./components/WelcomePage";
 import {Link, Route} from "react-router-dom";
+import {DivNav} from "./components/styles";
 
 
 export default function App() {
   return (
     <main>
-      <div className="nav-links">
+      <DivNav className="nav-links">
         <Link to="/">Home</Link>
         <Link to="/characters">Characters</Link>
-      </div>
+      </DivNav>
       <Header />
       <Route path="/characters">
         <CharacterList />

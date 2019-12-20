@@ -1,58 +1,38 @@
 import React, { useState, useEffect } from "react";
-
-// const characters = [
-//   "Harry Potter",
-//   "Luna Lovegood",
-//   "Neville Longbottom",
-//   "Hermione Granger",
-//   "Ron Weasley",
-//   "Ginny Weasley",
-//   "Fred Weasley",
-//   "George Weasley",
-//   "Albus Dumbledore ",
-//   "Aberforth Dumbledore ",
-//   "Dudley Dursley ",
-//   "Petunia Dursley ",
-//   "Vernon Dursley",
-//   "Cornelius Fudge",
-//   "Rubeus Hagrid ",
-//   "Viktor Krum ",
-//   "Bellatrix Lestrange",
-//   "Narcissa Malfoy",
-//   "Draco Malfoy"
-// ];
+import {SearchBar} from "./styles";
 
 export default function SearchForm(props) {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+  console.log(props)
+  const [query, setQuery] = useState("");
+  const [data, setData] = useState([]);
   
 
   useEffect(() => {
-    const results = props.characters.filter(character =>
-      character.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-      setSearchResults(results)
-  }, [searchTerm])
+    const results = props.char.filter(character =>
+      character.name.toLowerCase().includes(query.toLowerCase())
+    );
+    setData(results);
+  }, [query])
 
   const handleChange = event => {
-    setSearchTerm(event.target.value);
+    setQuery(event.target.value);
   };
 
   return (
     <section className="search-form">
       <form>
-        <input 
+        <SearchBar 
           id="search" 
           type="text" 
           name="search" 
-          plaeholder="Search" 
-          value={searchTerm}
+          placeholder="Search" 
+          value={query}
           onChange={handleChange}
         />
       </form>
       <ul>
-        {searchResults.map(character => (
-          <li key={character}>{character}</li>
+        {data.map(character => (
+          <li key={character.id}>{character.name}</li>
         ))}
       </ul>
     </section>

@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: Because the entire site/application is loaded on the first request, routing between different parts of the page becomes much faster. Clicking links would no longer require a server request as everything is handled client-side.
 
 ## Project Set Up
 
@@ -74,7 +74,7 @@ _Add a Router to this application using [React Router](https://reacttraining.com
 
 _Add 'Search by Name' feature._
 
-- [ ]  Add the `<SearchForm />` component (see `./components/SearchForm.js`).
+- [X]  Add the `<SearchForm />` component (see `./components/SearchForm.js`).
 - [ ]  Create a search form that will filter through the data displayed in the character list.
 
 ### **Required best practices:**
