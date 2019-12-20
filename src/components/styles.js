@@ -20,5 +20,4 @@ export const SearchBar = styled.input`
 export const DivNav = styled.div`
     display: flex;
     justify-content: space-evenly;
-    text-decoration: none;
 `

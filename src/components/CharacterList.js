@@ -32,7 +32,7 @@ export default function CharacterList() {
     <SearchForm 
       char={char}
     />
-      {char.map(character => {
+      {/* {char.map(character => {
         return (
           <CharacterCard
             key={character.id}
@@ -40,8 +40,9 @@ export default function CharacterList() {
             status={character.status}
             species={character.species}
           />
+          
         )
-      })}
+      })} */}
     </ListSection>
     </>
   );

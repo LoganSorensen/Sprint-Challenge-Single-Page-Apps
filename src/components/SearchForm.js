@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {SearchBar} from "./styles";
+import CharacterCard from "./CharacterCard"
 
 export default function SearchForm(props) {
   console.log(props)
@@ -31,9 +32,20 @@ export default function SearchForm(props) {
         />
       </form>
       <ul>
-        {data.map(character => (
-          <li key={character.id}>{character.name}</li>
-        ))}
+        {data.map(character => {
+          return (
+            <>
+              <div key={character.id}>
+              <CharacterCard
+                key={character.id}
+                name={character.name}
+                status={character.status}
+                species={character.species}
+              />
+              </div>
+            </>
+          )
+        })}
       </ul>
     </section>
   );
